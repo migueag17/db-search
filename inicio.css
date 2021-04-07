@@ -1,0 +1,261 @@
+:root {
+    --blanco: #FFFFFF;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+
+/* Globales */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+body{
+    font-size: 16px; /* 1 rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.boton{
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px){
+    .boton{
+        width: auto;
+    }
+}
+.boton :hover{
+    cursor: pointer;
+}
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(122,122,122,0.58);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Tipografía */
+h1{
+    font-size: 3.8rem; 
+}
+h2{
+    font-size: 2.8rem; 
+}
+h3{
+    font-size: 1.8rem; 
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+/* Titulos */
+.titulo span {
+    font-size: 2rem;
+}
+/*  Utilidades */
+.w-100{
+    width: 100%;
+}
+@media (min-width:768px){
+    .w-100{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+}
+/* Navegación principal */
+.nav-bg{
+    background-color: var(--primario);
+}
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+
+}
+@media (min-width:768px){
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/* Hero */
+.hero{
+    background-image: url(../img/casa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgb(0, 0,0, .7); /**Anterior **/
+    background-color: rgb( 0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+ /*  servicios */
+ @media (min-width:768px){
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        column-gap: 1rem;
+    }
+}
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3{
+    color: var(--oscuro);
+    font-weight: 700;
+}
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--grisClaro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/** Contacto **/
+
+.formulario{
+    background-color: var(--grisClaro);
+    width: min( 60rem, 100%); /** Utilizar el valor más pequeño */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.formulario fieldset{
+    border: none;
+}
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--secundario)
+}
+@media (min-windht: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    } 
+    .campo:nth-child(3),
+    .campo:nth-child(4){ /* el campo email va de la fila 1 a la 3 */
+        grid-column: 1 / 3;
+
+    }
+}
+.campo{
+    margin-bottom: 1rem;
+}
+.campo label{
+    color: var(--oscuro);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.campo textarea{
+    height: 20rem;
+}
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+.enviar .boton{
+    width: 100%;
+}
+
+.footer{
+    text-align:center;
+}
+
+table, th,td{
+    border: 1px solid black; 
+    padding: 5px;
+    background-color: var(--blanco);
+
+}
+
+.alinear-input {display: inline !important;}
+
+table {
+    margin: auto;
+    width: 100%;
+    background-color: var(--primario);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Miguel</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="inicio.css" as="style">
+    <link href="inicio.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Inmobiliaria Miguel</h1>
+    </header>
+
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="inicio.html">Inicio</a>
+            <a href="crearcliente.html">Crear Clientes</a>
+            <a href="crearvendedor.html">Crear Vendedores</a>
+            <a href="crearventa.php">Crear Venta</a>
+            <a href="reportecliente.php">Reporte Clientes</a>
+            <a href="reporteventas.php">Reporte Ventas</a>
+        </nav>
+    </div>
+   
+    <main class="contenedor sombra">
+    <section>
+        <h2>Cliente</h2>
+        <form class="formulario" action="crearcliente.php" method="POST">
+            <fieldset>
+                <legend>Crear Cliente</legend>
+                <div class="contenedor-campos">
+                <div class="campo">
+                    <label>Nombre</label>
+                    <input class="input-text" type="text" placeholder="Tu Nombre" name="nombre">
+                </div>
+                
+                <div class="campo">
+                    <label>Cédula</label>
+                    <input class="input-text" type="tel" placeholder="Tu cédula" name="cedula">
+                </div>
+                
+                <div class="campo">
+                    <label>Número de compras</label>
+                    <input class="input-text" type="tel" placeholder="Nro Compras" name="nroCompras">
+                </div>
+                
+            </div> <!-- .contenedor-campos-->
+
+            <div class="alinear-derecha flex">
+                <input class="boton w-100" type="submit" value="Crear">
+            </div>
+            </fieldset>
+        </form>
+    </section>
+</main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados. Miguel Aguirre Realtor</p>
+    </footer>
+    
+</body>
+</html>
